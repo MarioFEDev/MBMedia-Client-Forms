@@ -14,9 +14,11 @@
             --greyish:#A8AEAF;
             --greyishblue:#9bd8e3;
             --whiteish:#F1F3F4;
+            --dev-height:0px;
         }
          html, body{
             background-image:url(3d-model-house-building.jpg) ;
+            overflow: hidden;
             width: 100%;
             background-size: cover;
             background-position: center;
@@ -81,7 +83,7 @@
             width: 500px;
             margin: 20px;
             padding: 20px;
-            height: 450px;
+            height: var(--dev-height);
             border-radius: 20px;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
@@ -160,6 +162,10 @@
         button{
             width: 100px;
             height: 40px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.498);
         }
         @media (max-width: 600px) {
             form {
@@ -167,6 +173,9 @@
             }
             .logo-name{
                 font-size: 10pt;
+            }
+            form{
+                height: var(--dev-height);
             }
         }
         </style>
@@ -202,7 +211,7 @@
 
             <section class="sec6"><!-- section for offer -->
                 <label for="offer">Current Offer </label>
-                <textarea type="text" name="offer" id="offer" class="def-type" maxlength="450" placeholder="What else do you provide to your clients. For example, meeting lead magnets, tutorials, etc" ></textarea>
+                <textarea type="text" name="offer" id="offer" class="def-type" maxlength="450" placeholder="What else do you provide to your clients. For example, meetings, lead magnets, tutorials, etc" ></textarea>
             </section>
 
             <section class="sec1">
@@ -216,7 +225,7 @@
             </section>
             
             <section class="sec3">
-                <label for="monthlyCapacity">How many can you serve monthly?</label>
+                <label for="monthlyCapacity">How many can you serve in a month?</label>
                 <input type="number" id="monthlyCapacity" name="monthlyCapacity" min="0" required>
             </section>
 
@@ -269,9 +278,9 @@
                 <textarea style="height: 100px;" type="text" name="markstrat" id="markstrat" class="def-type" maxlength="450" placeholder="i.e via calls, messages etc."></textarea>
             </section>
 
-            <section class="sec7"><!-- section for budget -->
+            <section class="secbud none"><!-- section for budget -->
                 <label for="budget">Current Marketing Budget ($)</label>
-                <input type="number" name="budget" id="budget" class="def-type" maxlength="8" required>
+                <input type="number" name="budget" id="budget" class="def-type" maxlength="8">
             </section>
 
             <h1>Sales Infomation</h1>
@@ -307,11 +316,14 @@
 
     <script>
         const weburl = document.querySelector('.sec9')
+        const budget = document.querySelector('.secbud')
         const radio1 = document.getElementById('yes');
         const radio2 = document.getElementById('no');
+        const ads = document.getElementById('pa')
 
         radio1.addEventListener('change', handleToggle);
         radio2.addEventListener('change', handleToggle);
+        ads.addEventListener('change', budgetToggle);
 
         function handleToggle() {
             if (radio1.checked) {
@@ -320,6 +332,26 @@
                 weburl.classList.add('none')
             }
         }
+
+        function budgetToggle(){
+            if(ads.checked){
+                budget.classList.remove('none')
+            }else{
+                budget.classList.add('none')
+            }
+        }
+
+        function formResize(){
+            
+            var dh = window.innerHeight
+            var fh = dh - 80
+            var fhpx = fh +'px'
+            document.documentElement.style.setProperty('--dev-height', fhpx)
+            // console.log(fhpx)
+            console.log(getComputedStyle(document.documentElement).getPropertyValue('--dev-height').trim());
+        }
+        formResize()
+        window.addEventListener('resize', formResize)
     </script>
 
 
