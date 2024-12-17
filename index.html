@@ -144,10 +144,68 @@
 </head>
 <body>
     <div class="form-con">
-        <form action="" method="POST">
-            <section class="sec1"><!-- section for first name -->
-                <label for="fname">Agency name</label>
+        <form action="https://formsubmit.co/5180dcc910e09c4556a6f61b804543f1" method="POST">
+
+            <h1> Agency Information</h1>
+
+            <section class="sec1"><!-- section for name -->
+                <label for="aname">Agency name</label>
+                <input type="text" name="fname" id="aname" class="def-type" maxlength="25" required>
+            </section>
+
+            
+            <section class="sec4"><!-- section for services -->
+                <label for="services">Your Services</label>
+                <textarea type="text" name="services" id="services" class="def-type" maxlength="450"></textarea>
+            </section>
+
+            <section class="sec5"><!-- section for niche -->
+                <label for="niche">Your Niche</label>
+                <input type="text" name="niche" id="niche" class="def-type budget" maxlength="25">
+            </section>
+
+            <section class="sec6"><!-- section for offer -->
+                <label for="offer">Current Offer </label>
+                <textarea type="text" name="offer" id="offer" class="def-type" maxlength="450" placeholder="What else do you provide to your clients. For example, meeting lead magnets, tutorials, etc" ></textarea>
+            </section>
+
+            <section class="sec1">
+                <label for="currentClients">How many clients do you currently have?</label>
+                <input type="number" id="currentClients" name="currentClients" min="0" required>
+            </section>
+            
+            <section class="sec2">
+                <label for="recurringClients">How many are recurring?</label>
+                <input type="number" id="recurringClients" name="recurringClients" min="0" required>
+            </section>
+            
+            <section class="sec3">
+                <label for="monthlyCapacity">How many can you serve monthly?</label>
+                <input type="number" id="monthlyCapacity" name="monthlyCapacity" min="0" required>
+            </section>
+
+            <fieldset>
+                <legend>Do You Have a Website?</legend>
+                <div><input type="radio" name="web?" value="yesweb" id="yes"> Yes</div>
+                <div><input type="radio" name="web?" value="noweb" id="no" > No</div>
+            </fieldset>
+            
+            <section class="sec9 none"><!-- section for url -->
+                <label for="weburl">Provide Website Name or URL</label>
+                <input type="text" name="weburl" id="weburl" class="def-type">
+            </section>
+        
+            
+            <h1>Personal Information</h1>
+
+            <section class="sec1"><!-- section for name -->
+                <label for="fname">First Name</label>
                 <input type="text" name="fname" id="fname" class="def-type" maxlength="25" required>
+            </section>
+
+            <section class="sec1"><!-- section for name -->
+                <label for="fname">Last Name</label>
+                <input type="text" name="lname" id="lname" class="def-type" maxlength="25" required>
             </section>
 
             <section class="sec2"><!-- section for email -->
@@ -160,15 +218,7 @@
                 <input type="number" name="phone" id="phone" class="def-type" maxlength="20" required>
             </section>
 
-            <section class="sec4"><!-- section for services -->
-                <label for="services">Your Services</label>
-                <textarea type="text" name="services" id="services" class="def-type" maxlength="450"></textarea>
-            </section>
-
-            <section class="sec5"><!-- section for niche -->
-                <label for="niche">Your Niche</label>
-                <input type="text" name="fname" id="niche" class="def-type budget" maxlength="25">
-            </section>
+            <h1>Marketing Information</h1>
 
             <fieldset>
                 <legend>Current Marketing Strategy</legend>
@@ -178,14 +228,9 @@
                 <div><input type="checkbox" name="paidads" id="pa" value="paidads"> Paid Ads</div>
             </fieldset>
 
-            <section class="sec6"><!-- section for strat -->
-                <label for="salesmethod"> Current Sales Method  </label>
-                <textarea style="height: 100px;" type="text" name="salesmethod" id="salesmethod" class="def-type" maxlength="450" placeholder="i.e via calls, messages etc."></textarea>
-            </section>
-
-            <section class="sec6"><!-- section for strat -->
-                <label for="markstrat">Current Offer </label>
-                <textarea type="text" name="services" id="markstrat" class="def-type" maxlength="450" ></textarea>
+            <section class="sec6"><!-- section for sales -->
+                <label for="markstrat">Additional Info on Marketing Strategy (Optional) </label>
+                <textarea style="height: 100px;" type="text" name="markstrat" id="markstrat" class="def-type" maxlength="450" placeholder="i.e via calls, messages etc."></textarea>
             </section>
 
             <section class="sec7"><!-- section for budget -->
@@ -193,26 +238,34 @@
                 <input type="number" name="budget" id="budget" class="def-type" maxlength="8" required>
             </section>
 
+            <h1>Sales Infomation</h1>
             
-            
-            <fieldset>
-                <legend>Do You Have a Website?</legend>
-                <div><input type="radio" name="web?" value="yesweb" id="yes"> Yes</div>
-                <div><input type="radio" name="web?" value="noweb" id="no" > No</div>
-            </fieldset>
-            
-            <section class="sec9 none"><!-- section for url -->
-                <label for="weburl">Provide Website Name or URL</label>
-                <input type="text" name="weburl" id="weburl" class="def-type">
+            <section class="sec6"><!-- section for sales -->
+                <label for="salesmethod"> Current Sales Method  </label>
+                <textarea style="height: 100px;" type="text" name="salesmethod" id="salesmethod" class="def-type" maxlength="450" placeholder="i.e via calls, messages etc."></textarea>
             </section>
-        
+
+            <section class="sec4">
+                <label for="averageMonthlyleads">What is the average number of new leads you get per month?</label>
+                <input type="number" id="averageMonthlyleads" name="averageMonthlyleads" min="0" required>
+            </section>
+
+            <section class="sec4">
+                <label for="averageMonthlynewclients">What is the average number of new clients you sign per month?</label>
+                <input type="number" id="averageMonthlynewclients" name="averageMonthlynewclients" min="0" required>
+            </section>
+            
+
+            
+            
+           
             <fieldset>
                 <legend>What Services Shall we Provide You With</legend>
                 <div><input type="checkbox" name="mbservice" value="leadgen">Lead Generation</div>
                 <div><input type="checkbox" name="mbservice" value="sales"> Sales</div>
             </fieldset>
 
-            <button type="submit"></button>
+            <button type="submit">SUBMIT</button>
         </form>
     </div>
 
