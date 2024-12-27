@@ -175,7 +175,7 @@
             left: 0;
             top: 0;
             background-color: var(--main2);
-            display: flex;
+            display: none;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -393,7 +393,7 @@
             console.log(getComputedStyle(document.documentElement).getPropertyValue('--dev-height').trim());
         }
         
-        //changeState()
+        changeState()
         function changeState(){
             save()
             let tmes = document.querySelector('.thnku')
