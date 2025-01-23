@@ -285,8 +285,8 @@
             </fieldset> -->
 
             <section class="sec6"><!-- section for sales -->
-                <label for="markstrat">Additional Info on Marketing Strategy (Optional) </label>
-                <textarea style="height: 100px;" type="text" name="markstrat" id="markstrat" class="def-type" maxlength="450" placeholder="i.e via calls, messages etc."></textarea>
+                <label for="markstrat">How Do You Get Your Clients/Customers</label>
+                <textarea style="height: 100px;" type="text" name="markstrat" id="markstrat" class="def-type" maxlength="450" placeholder="i.e via Cold Outreach, Warm Outreach, Paid Ads, Social Media ....."></textarea>
             </section>
 
             <section class="secbud none"><!-- section for budget -->
@@ -294,12 +294,12 @@
                 <input type="number" name="budget" id="budget" class="def-type" maxlength="8">
             </section>
 
-            <h1>Sales Infomation</h1>
+            <!-- <h1>Sales Infomation</h1>
             
-            <section class="sec6"><!-- section for sales -->
+            <section class="sec6"> section for sales 
                 <label for="salesmethod"> Current Sales Method  </label>
                 <textarea style="height: 100px;" type="text" name="salesmethod" id="salesmethod" class="def-type" maxlength="450" placeholder="i.e via calls, messages etc."></textarea>
-            </section>
+            </section> -->
 
             <section class="sec4">
                 <label for="averageMonthlyleads">What is the average number of new leads you get per month?</label>
@@ -307,7 +307,7 @@
             </section>
 
             <section class="sec4">
-                <label for="averageMonthlynewclients">What is the average number of new clients you sign per month?</label>
+                <label for="averageMonthlynewclients">What is the average number of new clients/customers gained per month?</label>
                 <input type="number" id="averageMonthlynewclients" name="averageMonthlynewclients" min="0" required>
             </section>
             
@@ -330,14 +330,14 @@
         const budget = document.querySelector('.secbud')
         const radio1 = document.getElementById('yes');
         const radio2 = document.getElementById('no');
-        const ads = document.getElementById('pa')
+        // const ads = document.getElementById('pa')
         const team1 = document.getElementById('yest')
         const team2 = document.getElementById('not')
         const teamno = document.querySelector('.sect')
 
         radio1.addEventListener('change', handleToggle);
         radio2.addEventListener('change', handleToggle);
-        ads.addEventListener('change', budgetToggle);
+        // ads.addEventListener('change', budgetToggle);
         team1.addEventListener('change', teamToggle )
         team2.addEventListener('change', teamToggle )
 
@@ -349,13 +349,13 @@
             }
         }
 
-        function budgetToggle(){
-            if(ads.checked){
-                budget.classList.remove('none')
-            }else{
-                budget.classList.add('none')
-            }
-        }
+        // function budgetToggle(){
+        //     if(ads.checked){
+        //         budget.classList.remove('none')
+        //     }else{
+        //         budget.classList.add('none')
+        //     }
+        // }
 
         function teamToggle(){
             if(team1.checked){
@@ -365,17 +365,7 @@
             }
         }
 
-        function formResize(){
-            
-            var dh = window.innerHeight
-            var fh = dh - 80
-            var fhpx = fh +'px'
-            document.documentElement.style.setProperty('--dev-height', fhpx)
-            // console.log(fhpx)
-            console.log(getComputedStyle(document.documentElement).getPropertyValue('--dev-height').trim());
-        }
-        formResize()
-        window.addEventListener('resize', formResize)
+    
     </script>
 
 
