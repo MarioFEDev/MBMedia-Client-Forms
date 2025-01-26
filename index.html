@@ -215,7 +215,7 @@
             </section> -->
 
             <section class="sec1">
-                <label for="currentClients">How many clients do you currently have?</label>
+                <label for="currentClients">How many clients/customers do you currently have?</label>
                 <input type="number" id="currentClients" name="currentClients" min="0" required>
             </section>
             
@@ -249,7 +249,7 @@
             </section>
 
             <section class="sec1"><!-- section for name -->
-                <label for="fname">Last Name</label>
+                <label for="lname">Last Name</label>
                 <input type="text" name="lname" id="lname" class="def-type" maxlength="25" required>
             </section>
 
@@ -264,13 +264,20 @@
             </section>
 
             <fieldset>
-                <legend>Do You Work in a Team?</legend>
+                <legend>Do You Work in a Team, Partners or Employees?</legend>
                 <div><input type="radio" name="team?" value="yesweb" id="yest"> Yes</div>
                 <div><input type="radio" name="team?" value="noweb" id="not" > No</div>
             </fieldset>
             
+            <fieldset class="sect-field none">
+                <legend>Which is It?</legend>
+                <div><input type="radio" name="team/part/employ?" value="team" id="team"> Team</div>
+                <div><input type="radio" name="team/part/employ?" value="partner" id="part" >Partner</div>
+                <div><input type="radio" name="team/part/employ?" value="employee" id="employ" >Employees</div>
+            </fieldset>
+
             <section class="sect none"><!-- section for Team no -->
-                <label for="weburl">How Many People are in Your Team</label>
+                <label for="teamno" class="team-label">How Many People are in Your </label>
                 <input type="number" name="teamno" id="teamno" class="def-type">
             </section>
 
@@ -286,7 +293,7 @@
 
             <section class="sec6"><!-- section for sales -->
                 <label for="markstrat">How Do You Get Your Clients/Customers</label>
-                <textarea style="height: 100px;" type="text" name="markstrat" id="markstrat" class="def-type" maxlength="450" placeholder="i.e via Cold Outreach, Warm Outreach, Paid Ads, Social Media ....."></textarea>
+                <textarea style="height: 100px;" type="text" name="markstrat" id="markstrat" class="def-type" maxlength="450" placeholder="Kindly Be Detailed"></textarea>
             </section>
 
             <section class="secbud none"><!-- section for budget -->
@@ -312,15 +319,7 @@
             </section>
             
 
-            
-            
-           
-            <fieldset>
-                <legend>What Services Shall we Provide You With</legend>
-                <div><input type="checkbox" name="mbservice" value="leadgen">Lead Generation</div>
-                <div><input type="checkbox" name="mbservice" value="sales"> Sales</div>
-            </fieldset>
-
+        
             <button type="submit">SUBMIT</button>
         </form>
     </div>
@@ -334,6 +333,11 @@
         const team1 = document.getElementById('yest')
         const team2 = document.getElementById('not')
         const teamno = document.querySelector('.sect')
+        const tpe = document.querySelector('.sect-field')
+        const team = document.getElementById('team')
+        const partner = document.getElementById('part')
+        const employee = document.getElementById('employ')
+        const tlabel = document.querySelector('.team-label')
 
         radio1.addEventListener('change', handleToggle);
         radio2.addEventListener('change', handleToggle);
@@ -359,11 +363,28 @@
 
         function teamToggle(){
             if(team1.checked){
-                teamno.classList.remove('none')
+                tpe.classList.remove('none')
             }else if(team2.checked){
+                tpe.classList.add('none')
                 teamno.classList.add('none')
             }
         }
+        function teamNo(){
+            if(team.checked){
+                teamno.classList.remove('none')
+                tlabel.innerText = 'How Many People are in Your Team'
+            }else if(partner.checked){
+                teamno.classList.remove('none')
+                tlabel.innerText = 'How Many Partners do you have'
+            }else if(employee.checked){
+                teamno.classList.remove('none')
+                tlabel.innerText = 'How Many Employees do you have'
+            }
+        }
+
+        team.addEventListener('change', teamNo)
+        partner.addEventListener('change', teamNo)
+        employee.addEventListener('change', teamNo)
 
     
     </script>
